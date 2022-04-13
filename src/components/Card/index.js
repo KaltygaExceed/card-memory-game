@@ -4,7 +4,7 @@ import { Wrapper, FrontImg, BackImg } from "./card.styles";
 
 const Card = ({ card, callback }) => {
     const handleClick = () => {
-        if (card.clickable) callback(card);
+        if (card.clickable) callback(card)
     };
 
     return (
@@ -15,4 +15,4 @@ const Card = ({ card, callback }) => {
     );
 };
 
-export default Card;
+export default Card

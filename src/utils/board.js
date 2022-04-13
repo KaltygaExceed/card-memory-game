@@ -29,7 +29,7 @@ export const createBoard = () =>
     clickable: true,
     matchingCardId:
         i < card.length ? `card${i + cards.length}` : `card${i - cards.length}`,
-}));
+}))
 
 
 

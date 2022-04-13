@@ -5,7 +5,6 @@ import {plusPoint, minusPoint} from "../../redux/actions/actions"
 import { createBoard } from "../../utils/board";
 import { shuffleArray } from "../../utils/utils";
 import style from "./gamePage.module.css"
-
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 
@@ -33,8 +32,8 @@ const GamePage = () => {
             )
         );
         if (!clickedCard) {
-            setClickedCard({ ...currentClickedCard });
-            return;
+            setClickedCard({ ...currentClickedCard })
+            return
         }
 
         if (
@@ -42,18 +41,18 @@ const GamePage = () => {
             clickedCard.id === currentClickedCard.matchingCardId
         ) {
             dispatch(plusPoint());
-            setMatchedPairs((prev) => prev + 1);
+            setMatchedPairs((prev) => prev + 1)
             setCards((prev) =>
                 prev.map((card) =>
                     card.id === clickedCard.id || card.id === currentClickedCard.id
                         ? { ...card, clickable: false }
                         : card
                 )
-            );
-            setClickedCard(undefined);
+            )
+            setClickedCard(undefined)
             return;
         }
-        dispatch(minusPoint());
+        dispatch(minusPoint())
 
         setTimeout(() => {
             setCards((prev) =>
@@ -62,8 +61,8 @@ const GamePage = () => {
                         ? { ...card, flipped: false, clickable: true }
                         : card
                 )
-            );
-        }, 1000);
+            )
+        }, 1000)
 
         setClickedCard(undefined);
     };
@@ -85,4 +84,4 @@ const GamePage = () => {
     );
 };
 
-export default GamePage;
+export default GamePage

@@ -6,7 +6,7 @@ const LeaderPage = () => {
 
         function refreshPage() {
             localStorage.clear()
-            window.location.href = "/";
+            window.location.href = "/"
         }
 
         const leaders = JSON.parse(localStorage.getItem("leaders") || "[]").slice(1).sort(function (a, b) {

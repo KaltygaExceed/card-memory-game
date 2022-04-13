@@ -1,14 +1,14 @@
-import {useSelector, useDispatch} from "react-redux";
+import {useSelector, useDispatch} from "react-redux"
 import style from "./resultPage.module.css"
 import {setHighscore} from "../../redux/actions/actions"
-import {useEffect} from "react";
+import {useEffect} from "react"
 
 const ResultPage = () => {
     function refreshPage() {
-        window.location.href = "/";
+        window.location.href = "/"
     }
 
-    const {name, count, highscore} = useSelector((state) => state);
+    const {name, count, highscore} = useSelector((state) => state)
     let dispatch = useDispatch()
 
 
@@ -23,7 +23,7 @@ const ResultPage = () => {
 
     if (highscore < count) {
         dispatch(setHighscore())
-        localStorage.setItem('highscore', count);
+        localStorage.setItem('highscore', count)
     }
 
     return (

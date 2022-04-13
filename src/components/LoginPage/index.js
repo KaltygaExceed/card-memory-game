@@ -6,8 +6,8 @@ import style from "./loginPage.module.css"
 
 const LoginPage = () => {
 
-    const [inputValue, setInputValue] = useState("");
-    const dispatch = useDispatch();
+    const [inputValue, setInputValue] = useState("")
+    const dispatch = useDispatch()
 
     return (
         <div className={style.container}>
@@ -24,6 +24,6 @@ const LoginPage = () => {
                 START GAME
             </NavLink>
         </div>
-    );
-};
+    )
+}
 export default LoginPage
