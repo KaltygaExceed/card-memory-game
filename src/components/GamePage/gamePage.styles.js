@@ -1,24 +1,23 @@
-.container {
+import styled, {css} from "styled-components";
+import {NavLink} from "react-router-dom";
+
+export const Container = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     height: 100vh;
-}
-.containerButton{
+    `
+
+export const ContainerButton = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     max-width: 100%;
     margin-top: 50px;
-}
-.containerCards{
-    display: grid;
-    grid-template-columns: 100px 100px 100px 100px;
-    grid-gap: 0.5rem;
-}
+    `
 
-.button {
+export const Button = styled(NavLink)`
     font-size: 35px;
     height: 24px;
     width: 100px;
@@ -27,8 +26,7 @@
     -webkit-text-stroke: 1px #ffdd32;
     color: black;
     box-sizing: border-box;
-}
-.button:hover {
+    &:hover {
     height: 24px;
     width: 100px;
     font-size: 35px;
@@ -38,4 +36,10 @@
     -webkit-text-stroke: 1px #ffdd32;
     color: black;
     box-sizing: border-box;
-}
+    }
+    `
+export const ContainerCard = styled.div`
+ display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-gap: 0.5rem;
+    `

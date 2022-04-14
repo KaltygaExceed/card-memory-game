@@ -1,8 +1,7 @@
 import {useState} from "react"
-import {NavLink} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {assignName} from "../../redux/actions/actions";
-import style from "./loginPage.module.css"
+import {Button, Container, ContainerInput} from "./loginPage.styles"
 
 const LoginPage = () => {
 
@@ -10,20 +9,19 @@ const LoginPage = () => {
     const dispatch = useDispatch()
 
     return (
-        <div className={style.container}>
-            <input
-                className={style.container_input}
+        <Container>
+            <ContainerInput
                 placeholder={"Enter your name here"}
                 value={inputValue}
                 onChange={(e) => {
                     setInputValue(e.target.value);
                 }}
             />
-            <NavLink className={style.button} onClick={() => dispatch(assignName(inputValue))} to="/game">
+            <Button onClick={() => dispatch(assignName(inputValue))} to="/game">
                 {" "}
                 START GAME
-            </NavLink>
-        </div>
+            </Button>
+        </Container>
     )
 }
 export default LoginPage

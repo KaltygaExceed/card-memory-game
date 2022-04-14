@@ -1,7 +1,7 @@
 import {useSelector, useDispatch} from "react-redux"
-import style from "./resultPage.module.css"
 import {setHighscore} from "../../redux/actions/actions"
 import {useEffect} from "react"
+import {Container, Button} from "./resultPage.styles"
 
 const ResultPage = () => {
     function refreshPage() {
@@ -27,11 +27,11 @@ const ResultPage = () => {
     }
 
     return (
-        <div className={style.container}>
+        <Container>
             Congratulations {name}! You are your result: {count}
-            <button className={style.button} onClick={refreshPage}>start new game</button>
+            <Button onClick={refreshPage}>start new game</Button>
             <p>Highscore = {highscore}</p>
-        </div>
+        </Container>
     );
 };
 

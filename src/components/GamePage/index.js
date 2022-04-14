@@ -4,9 +4,8 @@ import Card from "../Card";
 import {plusPoint, minusPoint} from "../../redux/actions/actions"
 import { createBoard } from "../../utils/board";
 import { shuffleArray } from "../../utils/utils";
-import style from "./gamePage.module.css"
 import { useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
+import {Container, Button, ContainerButton, ContainerCard} from "./gamePage.styles"
 
 const GamePage = () => {
     const dispatch = useDispatch();
@@ -68,19 +67,22 @@ const GamePage = () => {
     };
 
     return (
-        <div className={style.container}>
-            {" "}
-            {gameEnd && (
-                <div className={style.containerButton}>
-                    <NavLink className={style.button} to="/results"> Results!</NavLink>
-                </div>
-            )}
-            <div className={style.containerCards}>
-                {cards.map((card) => (
-                    <Card key={card.id} callback={onCardClick} card={card} />
-                ))}
-            </div>
-        </div>
+
+            <Container>
+                {" "}
+                {gameEnd && (
+                    <ContainerButton>
+                        <Button to="/results"> Results!</Button>
+                    </ContainerButton>
+                )}
+                <ContainerCard>
+                    {cards.map((card) => (
+                        <Card key={card.id} callback={onCardClick} card={card} />
+                    ))}
+                </ContainerCard>
+            </Container>
+
+
     );
 };
 

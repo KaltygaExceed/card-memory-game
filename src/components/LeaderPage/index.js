@@ -1,9 +1,8 @@
 import LeaderCard from "./LeaderCard";
-import style from "./leaderPage.module.css"
+import {Container, NoGamesText, Button} from "./leaderPage.styles"
 
 
 const LeaderPage = () => {
-
         function refreshPage() {
             localStorage.clear()
             window.location.href = "/"
@@ -15,21 +14,20 @@ const LeaderPage = () => {
     console.log(leaders)
 
         return (
-            <div className={style.container}>
+            <Container>
                 {
                     leaders.length === 0 ?
-                        <div className={style.noGamesText}>Play more games to get leaderboard!</div> :
+                        <NoGamesText>Play more games to get leaderboard!</NoGamesText> :
                         leaders.slice(0, 10).map((player, index) => {
                             return <LeaderCard key={index} name={player.name} count={player.count} index={index + 1}/>
                         })
 
                 }
                 {
-                    leaders.length > 0 && <button className={style.button} onClick={refreshPage}>Delete all progress</button>
+                    leaders.length > 0 && <Button onClick={refreshPage}>Delete all progress</Button>
                 }
-            </div>
-        );
+            </Container>
+        )
     }
-;
 
 export default LeaderPage;

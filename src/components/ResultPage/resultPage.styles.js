@@ -1,4 +1,6 @@
-.container {
+import styled from "styled-components";
+
+export const Container = styled.div`
     font-size: 35px;
     -webkit-text-stroke: 1px #ffdd32;
     font-weight: bold;
@@ -6,9 +8,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
+    `
 
-.button {
+export const Button = styled.button`
     margin: 15px;
     font-size: 35px;
     background: linear-gradient(90deg, rgba(255,3,3,1) 0%, rgba(0,39,254,1) 89%);;
@@ -20,8 +22,7 @@
     border: 2px goldenrod outset;
     color: black;
     box-sizing: border-box;
-}
-
-.button:hover {
-    transform: scale(1.05);
-}
+    &:hover{
+        transform: scale(1.05);
+    }
+`
